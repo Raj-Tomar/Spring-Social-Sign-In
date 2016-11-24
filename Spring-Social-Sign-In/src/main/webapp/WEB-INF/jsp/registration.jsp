@@ -12,7 +12,7 @@
 <br/>
        <div id="registrationForm">
        <div id="result" style="color:#ff0000"></div>
-       <TABLE border="0" cellspacing="5" cellpadding="3">
+       <TABLE>
        <TR>
                    <th> UserId </th>
                    <td><input type="text" id="userId" name="userId" placeholder="UserId"  /></td>

@@ -629,7 +629,7 @@ body{
 					<h1>Login Into Your Account</h1>
 					<ul>
 						<li>
-							<input type="text" class="textbox1" id="username" name="j_username" placeholder="Username" required="">
+							<input type="text" class="textbox1" id="username" name="j_username" placeholder="Username" required="required">
 							<p><img src="<c:url value="/resources/images/contact.png"/>" alt=""></p>
 						</li>
 						<li>
@@ -639,7 +639,7 @@ body{
 					</ul>
 					<input type="submit" name="Sign In" value="Sign In">
 					<div class="clear"></div>	
-					<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Remember me</label>
+					<label class="checkbox"><input type="checkbox" name="checkbox" checked="checked"><i></i>Remember me</label>
 					<div class="forgot">
 						<a href="#">forgot password?</a>
 					</div>	
