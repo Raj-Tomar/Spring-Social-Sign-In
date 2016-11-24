@@ -59,15 +59,16 @@
         </property>
     </bean>
     
+     <bean id="transactionManager"
+        class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>	
+    
     <!-- Database Configuration End -->
     
     <tx:annotation-driven />
     <tx:annotation-driven transaction-manager="transactionManager"/>
  
-    <bean id="transactionManager"
-        class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory" />
-    </bean>		
     
     <!-- Locale Configuration Starts-->
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">

@@ -1,12 +1,12 @@
-package com.raj.controller;
+/*package com.raj.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-/**
+*//**
  * @author Raj Tomar
- */
+ *//*
 @Controller
 public class LoginController {
 
@@ -20,3 +20,4 @@ public class LoginController {
         return VIEW_NAME_LOGIN_PAGE;
     }
 }
+*/
