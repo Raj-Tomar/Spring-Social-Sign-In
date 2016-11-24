@@ -507,7 +507,7 @@ body{
     		font-size: 1em;
     }
 	.login_form {
-		//background: url("../images/border.png") no-repeat 247px 41px;
+		background: url("resources/images/border.png") no-repeat 247px 41px;
 	}
 	.forgot {
 		margin-right: 27px;
@@ -620,21 +620,21 @@ body{
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 </head>
-<body>			
+<body>		
 		<div class="wrap">
 
 			<div class="login-form">
-		
+			
 				<form class="login_form" name='loginForm' action="<c:url value='../j_spring_security_check' />" method='POST'>
 					<h1>Login Into Your Account</h1>
 					<ul>
 						<li>
 							<input type="text" class="textbox1" id="username" name="j_username" placeholder="Username" required="required">
-							<p><img src="<c:url value="/resources/images/contact.png"/>" alt=""></p>
+							<p><img src="<c:url value="/resources/images/contact.png"/>" ></p>
 						</li>
 						<li>
 							<input type="password" id="password" name="j_password" class="textbox2" placeholder="Password">
-							<p><img src="<c:url value="/resources/images/lock.png"/>" alt=""></p>
+							<p><img src="<c:url value="/resources/images/lock.png"/>" ></p>
 						</li>
 					</ul>
 					<input type="submit" name="Sign In" value="Sign In">
@@ -645,13 +645,13 @@ body{
 					</div>	
 					<div class="clear"></div>	
 				</form>
-				<c:url value="../services/signup" var="signupurl" />`
+				<c:url value="../services/signup" var="signupurl" />
 			<div class="account">
 				<h2><a href="${signupurl}">Don't have an account? Sign Up!</a></h2>
 				<div class="span">
 					<form name='facebookSocialloginForm'
             		  action="<c:url value='../auth/facebook?scope=email,user_about_me,user_birthday' />" method='POST'>
-							<img src="<c:url value="/resources/images/facebook.png"/>" alt="">
+							<img src="<c:url value="/resources/images/facebook.png"/>" >
 							<button type="submit">
 								<i>Sign In with Facebook</i>
 							</button>	
@@ -661,7 +661,7 @@ body{
 				<div class="span1">
 					<form name='TwitterSocialloginForm'
             		  action="<c:url value='../auth/twitter?scope=email,user_about_me,user_birthday' />" method='POST'>
-						<img src="<c:url value="/resources/images/twitter.png"/>" alt="">
+						<img src="<c:url value="/resources/images/twitter.png"/>" >
 						<button type="submit">
 							<i>Sign In with Twitter</i>
 						</button>			
@@ -671,7 +671,7 @@ body{
 				<div class="span2">
 					<form name='LinkedInSocialloginForm'
             		  action="<c:url value='../auth/linkedin' />" method='POST'>
-						<img src="<c:url value="/resources/images/linkedin.png"/>" alt="">
+						<img src="<c:url value="/resources/images/linkedin.png"/>" >
 						<button type="submit">
 							<i>Sign In with Linkedin</i>
 						</button>	
@@ -681,7 +681,7 @@ body{
 				<div class="span3">
                 	<form name='GoogleSocialloginForm'
                       action="<c:url value='../auth/google' />" method='POST'>
-                		<img src="<c:url value="/resources/images/gmail2.jpg"/>" alt="">
+                		<img src="<c:url value="/resources/images/gmail2.png"/>" width="40" height="30">
                 		<button type="submit">
                 			<i>Sign In with Google</i>
                 		</button>
