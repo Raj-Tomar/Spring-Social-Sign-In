@@ -50,7 +50,7 @@ body{
 /*start-login-form*/
 .login_form {
 	width: 55%;
-	//background: url("../images/border.png") no-repeat 331px 77px;
+	background: url("resources/images/border.png") no-repeat 331px 77px;
 	float: left;
 	position: relative;
 }
@@ -630,11 +630,11 @@ body{
 					<ul>
 						<li>
 							<input type="text" class="textbox1" id="username" name="j_username" placeholder="Username" required="">
-							<p><img src="../images/contact.png" alt=""></p>
+							<p><img src="<c:url value="/resources/images/contact.png"/>" alt=""></p>
 						</li>
 						<li>
 							<input type="password" id="password" name="j_password" class="textbox2" placeholder="Password">
-							<p><img src="../images/lock.png" alt=""></p>
+							<p><img src="<c:url value="/resources/images/lock.png"/>" alt=""></p>
 						</li>
 					</ul>
 					<input type="submit" name="Sign In" value="Sign In">
@@ -651,7 +651,7 @@ body{
 				<div class="span">
 					<form name='facebookSocialloginForm'
             		  action="<c:url value='../auth/facebook?scope=email,user_about_me,user_birthday' />" method='POST'>
-							<img src="../images/facebook.png" alt="">
+							<img src="<c:url value="/resources/images/facebook.png"/>" alt="">
 							<button type="submit">
 								<i>Sign In with Facebook</i>
 							</button>	
@@ -661,7 +661,7 @@ body{
 				<div class="span1">
 					<form name='TwitterSocialloginForm'
             		  action="<c:url value='../auth/twitter?scope=email,user_about_me,user_birthday' />" method='POST'>
-						<img src="../images/twitter.png" alt="">
+						<img src="<c:url value="/resources/images/twitter.png"/>" alt="">
 						<button type="submit">
 							<i>Sign In with Twitter</i>
 						</button>			
@@ -671,7 +671,7 @@ body{
 				<div class="span2">
 					<form name='LinkedInSocialloginForm'
             		  action="<c:url value='../auth/linkedin' />" method='POST'>
-						<img src="../images/linkedin.png" alt="">
+						<img src="<c:url value="/resources/images/linkedin.png"/>" alt="">
 						<button type="submit">
 							<i>Sign In with Linkedin</i>
 						</button>	
@@ -681,7 +681,7 @@ body{
 				<div class="span3">
                 	<form name='GoogleSocialloginForm'
                       action="<c:url value='../auth/google' />" method='POST'>
-                		<img src="../images/gmail2.jpg" alt="">
+                		<img src="<c:url value="/resources/images/gmail2.jpg"/>" alt="">
                 		<button type="submit">
                 			<i>Sign In with Google</i>
                 		</button>

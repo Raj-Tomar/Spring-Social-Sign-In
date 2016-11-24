@@ -15,7 +15,8 @@ public class AppSocialAuthenticationServiceRegistry extends SocialAuthentication
         this.authenticationServices = authenticationServices;
     }
 
-    @PostConstruct
+    @SuppressWarnings("rawtypes")
+	@PostConstruct
     public void init() {
         if (authenticationServices != null) {
             for (SocialAuthenticationService authenticationService : authenticationServices) {

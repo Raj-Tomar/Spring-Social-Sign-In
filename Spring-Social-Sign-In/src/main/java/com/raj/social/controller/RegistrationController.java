@@ -34,7 +34,8 @@ public class RegistrationController {
         return model;
     }
 
-    @RequestMapping(value = {"/user/register"}, method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+    @SuppressWarnings("unused")
+	@RequestMapping(value = {"/user/register"}, method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     public @ResponseBody String registerUser(@RequestBody UserRegistrationForm registrationForm) throws UserAlreadyExistAuthenticationException {
 
         if (registrationForm.getUserId() == null) {
