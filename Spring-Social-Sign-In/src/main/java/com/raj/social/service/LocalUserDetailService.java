@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.raj.social.database.dao.UserDAO;
 import com.raj.social.database.model.Role;
 import com.raj.social.database.model.User;
 import com.raj.social.dto.LocalUser;
@@ -18,7 +19,7 @@ import com.raj.social.dto.LocalUser;
 public class LocalUserDetailService implements UserDetailsService {
 
     @Autowired
-    private com.raj.social.database.dao.UserDAO userDAO;
+    private UserDAO userDAO;
 
     @Override
     @Transactional

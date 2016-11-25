@@ -18,8 +18,8 @@ public class AppAuthenticationEntryPoint extends LoginUrlAuthenticationEntryPoin
 
     /**
      * @param loginFormUrl URL where the login page can be found. Should either be
-     *                     relative to the web-app context path (include a leading {@code /}) or an absolute
-     *                     URL.
+     * relative to the web-app context path (include a leading {@code /}) or an absolute
+     * URL.
      */
     public AppAuthenticationEntryPoint(final String loginFormUrl) {
         super(loginFormUrl);
