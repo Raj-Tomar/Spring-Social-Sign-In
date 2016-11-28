@@ -10,10 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.raj.social.dto.SocialProvider;
 
 
-/**
- * @author <a href="mailto:sunil.pulugula@wavemaker.com">Sunil Kumar</a>
- * @since 29/3/16
- */
 public class SecurityUtil {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SecurityUtil.class);

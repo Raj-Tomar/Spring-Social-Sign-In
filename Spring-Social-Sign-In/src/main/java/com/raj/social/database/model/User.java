@@ -6,10 +6,6 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-/**
- * @author <a href="mailto:psunil1278@gmail.com">Sunil Kumar</a>
- * @since 25/12/15
- */
 @Entity
 @Table(name = "USER")
 public class User implements Serializable{
