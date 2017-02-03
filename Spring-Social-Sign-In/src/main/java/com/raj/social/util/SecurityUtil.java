@@ -12,24 +12,31 @@ import com.raj.social.dto.SocialProvider;
 
 public class SecurityUtil {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SecurityUtil.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(SecurityUtil.class);
 
-    public static void authenticateUser(UserDetails userDetails)
-    {
-        LOGGER.debug("Logging in principal: {}", userDetails);
+	/**
+	 * @param userDetails
+	 */
+	public static void authenticateUser(UserDetails userDetails) {
+		LOGGER.debug("Logging in principal: {}", userDetails);
 
-        Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+		Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, null,
+				userDetails.getAuthorities());
+		SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        LOGGER.info("User: {} has been logged in.", userDetails);
-    }
+		LOGGER.info("User: {} has been logged in.", userDetails);
+	}
 
-    public static SocialProvider toSocialProvider(String providerId) {
-        for (SocialProvider socialProvider : SocialProvider.values()) {
-            if (socialProvider.getProviderType().equals(providerId)) {
-                return socialProvider;
-            }
-        }
-        return SocialProvider.NONE;
-    }
+	/**
+	 * @param providerId
+	 * @return
+	 */
+	public static SocialProvider toSocialProvider(String providerId) {
+		for (SocialProvider socialProvider : SocialProvider.values()) {
+			if (socialProvider.getProviderType().equals(providerId)) {
+				return socialProvider;
+			}
+		}
+		return SocialProvider.NONE;
+	}
 }

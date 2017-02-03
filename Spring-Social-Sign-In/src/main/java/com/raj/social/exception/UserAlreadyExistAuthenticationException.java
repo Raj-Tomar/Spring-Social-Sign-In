@@ -9,6 +9,9 @@ public class UserAlreadyExistAuthenticationException extends AuthenticationExcep
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * @param msg
+	 */
 	public UserAlreadyExistAuthenticationException(final String msg) {
         super(msg);
     }

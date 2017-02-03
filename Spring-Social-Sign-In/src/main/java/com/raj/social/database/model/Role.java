@@ -29,6 +29,11 @@ public class Role implements Serializable {
     public Role() {
     }
 
+    /**
+     * @param roleId
+     * @param name
+     * @param users
+     */
     public Role(final Integer roleId, final String name, final Set<User> users) {
         this.roleId = roleId;
         this.name = name;

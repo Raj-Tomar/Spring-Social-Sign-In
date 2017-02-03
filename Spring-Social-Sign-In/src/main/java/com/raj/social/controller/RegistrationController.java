@@ -26,25 +26,38 @@ public class RegistrationController {
     @Autowired
     private UserService userService;
 
+    /**
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
-    public ModelAndView signup(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-        ModelAndView model = new ModelAndView();
-        model.addObject("title", "User Registration Form");
-        model.setViewName("registration");
-        return model;
-    }
+	public ModelAndView signup(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "User Registration Form");
+		model.setViewName("registration");
+		return model;
+	}
 
+    /**
+     * @param registrationForm
+     * @return
+     * @throws UserAlreadyExistAuthenticationException
+     */
     @SuppressWarnings("unused")
 	@RequestMapping(value = {"/user/register"}, method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-    public @ResponseBody String registerUser(@RequestBody UserRegistrationForm registrationForm) throws UserAlreadyExistAuthenticationException {
+	public @ResponseBody String registerUser(@RequestBody UserRegistrationForm registrationForm)
+			throws UserAlreadyExistAuthenticationException {
+		if (registrationForm.getUserId() == null) {
+			registrationForm.setUserId(registrationForm.getUserId());
+		}
 
-        if (registrationForm.getUserId() == null) {
-            registrationForm.setUserId(registrationForm.getUserId());
-        }
+		LocalUser localUser = (LocalUser) userService.registerNewUser(registrationForm);
 
-        LocalUser localUser = (LocalUser) userService.registerNewUser(registrationForm);
+		return "success";
 
-       return "success";
-
-    }
+	}
 }

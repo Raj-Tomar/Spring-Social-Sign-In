@@ -11,10 +11,16 @@ public class AppSocialAuthenticationServiceRegistry extends SocialAuthentication
 
     private List<SocialAuthenticationService<?>> authenticationServices;
 
+    /**
+     * @param authenticationServices
+     */
     public AppSocialAuthenticationServiceRegistry(final List<SocialAuthenticationService<?>> authenticationServices) {
         this.authenticationServices = authenticationServices;
     }
 
+    /**
+     * 
+     */
     @SuppressWarnings("rawtypes")
 	@PostConstruct
     public void init() {

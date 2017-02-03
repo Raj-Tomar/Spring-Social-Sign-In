@@ -13,11 +13,24 @@ public class LocalUser extends User {
 	private static final long serialVersionUID = 1L;
 	private String userId;
 
+    /**
+     * @param userId
+     * @param username
+     * @param password
+     * @param enabled
+     * @param accountNonExpired
+     * @param credentialsNonExpired
+     * @param accountNonLocked
+     * @param authorities
+     */
     public LocalUser(final String userId, final String username, final String password, final boolean enabled, final boolean accountNonExpired, final boolean credentialsNonExpired, final boolean accountNonLocked, final Collection<? extends GrantedAuthority> authorities) {
         super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
         this.userId = userId;
     }
 
+    /**
+     * @return
+     */
     public String getUserId() {
         return userId;
     }

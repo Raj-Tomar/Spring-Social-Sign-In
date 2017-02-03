@@ -27,6 +27,9 @@ public class RegistrationUserDetailService implements UserService {
     private UserDAO userDAO;
 
 
+    /* (non-Javadoc)
+     * @see com.raj.social.service.UserService#registerNewUser(com.raj.social.dto.UserRegistrationForm)
+     */
     @Override
     @Transactional(value = "transactionManager")
     public LocalUser registerNewUser(final UserRegistrationForm userRegistrationForm) throws UserAlreadyExistAuthenticationException {
@@ -43,6 +46,10 @@ public class RegistrationUserDetailService implements UserService {
         return (LocalUser) userDetailService.loadUserByUsername(userRegistrationForm.getUserId());
     }
 
+    /**
+     * @param formDTO
+     * @return
+     */
     private User buildUser(final UserRegistrationForm formDTO) {
         User user = new User();
         user.setUserId(formDTO.getUserId());

@@ -21,6 +21,9 @@ public class SocialUserDetailService implements SocialUserDetailsService {
     @Qualifier(value = "localUserDetailService")
     private UserDetailsService userDetailService;
 
+    /* (non-Javadoc)
+     * @see org.springframework.social.security.SocialUserDetailsService#loadUserByUserId(java.lang.String)
+     */
     @Override
     public SocialUserDetails loadUserByUserId(final String userId) throws UsernameNotFoundException, DataAccessException {
         LocalUser user = (LocalUser) userDetailService.loadUserByUsername(userId);

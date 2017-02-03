@@ -6,10 +6,16 @@ public enum SocialProvider {
 
     private String providerType;
 
+    /**
+     * @return
+     */
     public String getProviderType() {
         return providerType;
     }
 
+    /**
+     * @param providerType
+     */
     SocialProvider(final String providerType) {
         this.providerType = providerType;
     }

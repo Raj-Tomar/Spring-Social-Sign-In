@@ -16,41 +16,57 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class PagesController {
 
+    /**
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-        ModelAndView model = new ModelAndView();
-        model.addObject("title", "Login Page");
-        model.setViewName("login");
-        return model;
-    }
+	public ModelAndView login(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Login Page");
+		model.setViewName("login");
+		return model;
+	}
 
+    /**
+     * @return
+     */
     @RequestMapping(value = {"/userpage"}, method = RequestMethod.GET)
-    public ModelAndView userPage() {
+	public ModelAndView userPage() {
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Spring security social login Hello World");
+		model.addObject("user", getUser());
+		model.setViewName("user");
+		return model;
+	}
 
-        ModelAndView model = new ModelAndView();
-        model.addObject("title", "Spring security social login Hello World");
-        model.addObject("user", getUser());
-        model.setViewName("user");
-        return model;
-    }
-
+    /**
+     * @return
+     */
     @RequestMapping(value = {"/accessdenied"}, method = RequestMethod.GET)
-    public ModelAndView accessDeniedPage() {
-        ModelAndView model = new ModelAndView();
-        model.addObject("message", "Either username or password is incorrect.");
-        model.setViewName("accessdenied");
-        return model;
-    }
+	public ModelAndView accessDeniedPage() {
+		ModelAndView model = new ModelAndView();
+		model.addObject("message", "Either username or password is incorrect.");
+		model.setViewName("accessdenied");
+		return model;
+	}
 
-    private String getUser() {
-        String userName = null;
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (principal instanceof UserDetails) {
-            userName = ((UserDetails) principal).getUsername();
-        } else {
-            userName = principal.toString();
-        }
-        return userName;
-    }
+    /**
+     * @return
+     */
+	private String getUser() {
+		String userName = null;
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+			userName = ((UserDetails) principal).getUsername();
+		} else {
+			userName = principal.toString();
+		}
+		return userName;
+	}
 
 }

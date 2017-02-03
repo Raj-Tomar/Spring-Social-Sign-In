@@ -45,6 +45,15 @@ public class User implements Serializable{
     public User() {
     }
 
+    /**
+     * @param userId
+     * @param name
+     * @param password
+     * @param emailId
+     * @param active
+     * @param provider
+     * @param roles
+     */
     public User(final String userId, final String name, final String password, final String emailId, final Integer active, final String provider, final Set<Role> roles) {
         this.userId = userId;
         this.name = name;

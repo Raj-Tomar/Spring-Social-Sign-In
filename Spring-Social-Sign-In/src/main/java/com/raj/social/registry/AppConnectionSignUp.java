@@ -22,6 +22,9 @@ public class AppConnectionSignUp implements ConnectionSignUp {
     @Autowired
     private UserService userService;
 
+    /* (non-Javadoc)
+     * @see org.springframework.social.connect.ConnectionSignUp#execute(org.springframework.social.connect.Connection)
+     */
     @Override
     public String execute(final Connection<?> connection) {
         UserRegistrationForm userDetails = toUserRegistrationObject(connection.getKey().getProviderUserId(), SecurityUtil.toSocialProvider(connection.getKey().getProviderId()), connection.fetchUserProfile());
@@ -29,6 +32,12 @@ public class AppConnectionSignUp implements ConnectionSignUp {
         return user.getUserId();
     }
 
+    /**
+     * @param userId
+     * @param socialProvider
+     * @param userProfile
+     * @return
+     */
     private UserRegistrationForm toUserRegistrationObject(final String userId, final SocialProvider socialProvider, final UserProfile userProfile) {
         return UserRegistrationForm.getBuilder()
                 .addUserId(userId)

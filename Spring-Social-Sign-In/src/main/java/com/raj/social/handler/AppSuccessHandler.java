@@ -18,6 +18,9 @@ public class AppSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
+    /* (non-Javadoc)
+     * @see org.springframework.security.web.authentication.AbstractAuthenticationTargetUrlRequestHandler#handle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, org.springframework.security.core.Authentication)
+     */
     @Override
     protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
             throws IOException {
@@ -55,6 +58,10 @@ public class AppSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
         return url;
     }
 
+    /**
+     * @param roles
+     * @return
+     */
     private boolean isUser(List<String> roles) {
         if (roles.contains("ROLE_USER")) {
             return true;
@@ -62,6 +69,10 @@ public class AppSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
         return false;
     }
 
+    /**
+     * @param roles
+     * @return
+     */
     private boolean isAdmin(List<String> roles) {
         if (roles.contains("ROLE_ADMIN")) {
             return true;
@@ -69,10 +80,16 @@ public class AppSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
         return false;
     }
 
+    /* (non-Javadoc)
+     * @see org.springframework.security.web.authentication.AbstractAuthenticationTargetUrlRequestHandler#setRedirectStrategy(org.springframework.security.web.RedirectStrategy)
+     */
     public void setRedirectStrategy(RedirectStrategy redirectStrategy) {
         this.redirectStrategy = redirectStrategy;
     }
 
+    /* (non-Javadoc)
+     * @see org.springframework.security.web.authentication.AbstractAuthenticationTargetUrlRequestHandler#getRedirectStrategy()
+     */
     protected RedirectStrategy getRedirectStrategy() {
         return redirectStrategy;
     }

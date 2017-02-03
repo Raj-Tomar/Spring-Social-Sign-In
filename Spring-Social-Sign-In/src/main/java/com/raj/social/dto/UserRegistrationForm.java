@@ -13,6 +13,15 @@ public class UserRegistrationForm {
     public UserRegistrationForm() {
     }
 
+    /**
+     * @param userId
+     * @param firstName
+     * @param lastName
+     * @param phoneno
+     * @param email
+     * @param password
+     * @param socialProvider
+     */
     public UserRegistrationForm(final String userId, final String firstName, final String lastName, final String phoneno, final String email, final String password, final SocialProvider socialProvider) {
         this.userId = userId;
         this.firstName = firstName;

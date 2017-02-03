@@ -21,6 +21,9 @@ public class LocalUserDetailService implements UserDetailsService {
     @Autowired
     private UserDAO userDAO;
 
+    /* (non-Javadoc)
+     * @see org.springframework.security.core.userdetails.UserDetailsService#loadUserByUsername(java.lang.String)
+     */
     @Override
     @Transactional
     public LocalUser loadUserByUsername(final String userId) throws UsernameNotFoundException {
@@ -33,6 +36,10 @@ public class LocalUserDetailService implements UserDetailsService {
                 , true, true, simpleGrantedAuthorities);
     }
 
+    /**
+     * @param user
+     * @return
+     */
     private List<SimpleGrantedAuthority> buildSimpleGrantedAuthorities(final User user) {
         List<SimpleGrantedAuthority> simpleGrantedAuthorities = new ArrayList<>();
         if (user.getRoles() != null) {
